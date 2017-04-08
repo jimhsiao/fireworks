@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<style>
+  body {
+    padding: 100px;
+    width: 1000px;
+    margin: auto;
+    text-align: left;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color: #121212;
+  }
+  h1, h2, h3, h4 {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+</style>
+<title>CS 184 Final Project Proposal</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Source+Sans+Pro" rel="stylesheet">
+</head>
+
+
+<body>
+
+<h1 align="middle">CS 184: Computer Graphics and Imaging, Spring 2017</h1>
+<h1 align="middle">Final Project Proposal: Fireworks Simulation</h1>
+<h2 align="middle">Jim Hsiao, cs184-afz</h2>
+<h2 align="middle">Jacob Lin, cs184-afp</h2>
+
+<br><br>
+
+<div>
+
+
+Fireworks Simulation
+
+Team Members: Jacob Lin, Jim Hsiao
+<h3>Summary: In this project we are attempting to model the behavior of fireworks particles. On top of that, we are hoping to include a user interface that allows us to pick the starting point of the fireworks using mouse clicks, adjust various factors that would affect the behavior such as the initial velocity, the material used to model the fireworks particles, the number of particles that come out of the explosion spot, and etc.</h3>
+<h1 align="middle">Problem Description:</h1>
+<p>To model fireworks, we need to simulate a large amount of light objects exploding outwards from a source point. To recreate this, we are planning to simulate many bodyless light emitting particles scattered outwards from a single point. Each particle has the following properties that help us determine its behavior: position, velocity, acceleration, lifetime, and color. The firework simulation is made of different types of particles fulfilling different roles: a trail, exploding particle that creates other particles, and a light particle. Based on its role, a particle will have a different set of rules that determine its behavior and interaction with other particles. </p>
+<h1 align="middle">Goals and Deliverables:</h1>
+<h3>Baseline Plan</h3>
+<p>We plan to not only simulate fireworks but also create a user interface that allows users to create different behaviors or cool effects by manipulating particle properties directly. Some input parameters include number of particles, color, etc. Our demo will create a video of a firework simulation using input setting parameters. To do this our program will create a frame by frame model of the fireworks particles and then create a video from those frames. </p>
+<p>To measure quality or performance, we are planning to benchmark speed based on the number of particles we are trying to render. We can potentially add speed up optimization such as parallelization and CUDA and include graphs to display the improvement in speed. With this implemented, we can figure out how much parallelization affects the performance of a rendering system for a huge number of particles. </p>
+
+<h3>Aspirational Plan</h3>
+<h4>Interactive mouse click</h4>
+  <p>To improve upon the interface, we can add an interactive UI. This will allow a user to interactively create new fireworks by clicking on the UI, originating a firework at the mouse click point.</p> 
+<h4>Different types of fireworks</h4>
+  <p>In addition to the classic point expansion fireworks, we can also add different types of fireworks. Some examples include fireworks that explode in different shapes (such as an upward cone), fireworks that dim out before falling downwards so the light maintains a circular shape, etc. For these we can establish pre-set parameters for initial velocity and lifetime that can be selected to create different effects. We can also create fireworks with different explosion shapes and patterns. </p>
+<h4>Smoke effects</h4>
+  <p>With enough time we can also add smoke effects to simulate what a real life fireworks show would look like. To do this we would have to model smoke particles in addition to fireworks particles.</p>
+
+<h2 align="middle">Schedule</h2>
+<p>Week 1: Setup framework and simulate how particles shoot up before explosion occurs</p>
+<ul>
+  <li>Set up openGL for animation </li>
+  <li>Create module for calculating particle position </li>
+  <li>Use point-sprite particle system</li>
+  <li>Model velocity, acceleration</li>
+</ul>
+<p>Week 2: Simulate how explosion effects work</p>
+<ul>
+  <li>Add time to die for particle fade out</li>
+  <li>Model behavior with gravity for individual particles</li>
+  <li>Work on performance for large numbers of particles</li>
+</ul>
+<p>Week 3: Create User Interface to manipulate particle properties</p>
+<ul>
+  <li>Add UI for input parameters on a sidebar</li>
+  <li>Pass parameters to particle simulation module</li>
+</ul>
+<p>Week 4: Work on our inspirational plan</p>
+<ul>
+  <li>Use openGL to take in mouse input</li>
+  <li>Play around with different settings to create different particle effects</li>
+</ul>
+<h2 align="middle">Resources</h2>
+<p>Computing platform: OpenGL</p> 
+
+<p>https://www.opengl.org/discussion_boards/showthread.php/129159-Fireworks-Simulation</p>
+<p>https://web.cs.wpi.edu/~matt/courses/cs563/talks/cbyrd/pres4.html</p>
+<p>https://www.youtube.com/watch?v=if1ZzjjO9-E</p>
+<p>http://jamesjia.com/cs184-fluidsim</p>
+<p>http://theochem.mercer.edu/pipermail/csc415/attachments/20110507/6aab91e2/fireworks_final-0001.pdf</p>
+
+
+</body>
+</html>
